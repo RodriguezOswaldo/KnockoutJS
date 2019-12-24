@@ -11,6 +11,7 @@
 </head>
 <body>
 <h1>Welcome Bud ~ <span data-bind="text:firstName"></span> <span data-bind="text:lastName"></span></h1>  
+<hr>
 <form class="btn-group-vertical">
     <label>First Name:</label> 
     <input type="text" data-bind="value: firstName"> 
@@ -21,6 +22,10 @@
 
 
 <script>
+
+    /*I addded this line after the data-bind property to check the keyboard event.
+        , valueUpdate:'afterkeydown'
+    */
     var myViewModel = {
         firstName:ko.observable('Don'),
         lastName:ko.observable ('Doe')
@@ -29,6 +34,13 @@
         myViewModel.firstName();
         myViewModel.lastName();
     });
+    //this suscribe will do something everytime the valueUpdate is trigger.
+    myViewModel.firstName.subscribe(function(newValue){
+         alert("The Users first name is now " + newValue);
+    });
+    myViewModel.firstName.subscribe(function(oldValue){
+        alert("The Users first name was now " + oldValue);
+    }, null, "beforeChange");
     ko.applyBindings(myViewModel);
 </script>
 </body>
