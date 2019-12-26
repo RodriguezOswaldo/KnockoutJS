@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Interacting with Observable Arrays | Knockout Js</title>
+</head>
+<body>
+    <div class="container">
+        <h4>Users</h4>
+        
+        <table class="table table-striped">
+            <thead>
+                <th>Index</th>
+                <th>Name</th>
+            </thead>
+            <tbody data-bind="foreach: users">
+                <tr>
+                        <td data-bind="text: $index"></td>
+                        <td data-bind="text: name"> </td>
+                        <td><a class="btn btn-outline-danger" href="#" data-bind="click: $parent.removeUser"  >Remove</a> </td>
+                </tr>
+            </tbody>
+        </table>
+        <form action="">
+            <label for="newUser">Name</label>
+            <input type="text" id="newUser">
+
+            <button class="btn btn-outline-info" data-bind="click: addUser">Add User</button>
+        </form>
+    </div>
+    <script>
+    function viewModel(){
+        var self = this;
+
+        self.users = ko.observableArray([
+           
+        ]);
+        self.addUser = function(){
+            self.users.push({name:$('#newUser').val()});
+        }
+        self.removeUser = function(){
+            self.users.remove(this);
+        }
+    }
+    ko.applyBindings(new viewModel());
+    </script>
+</body>
+</html>
