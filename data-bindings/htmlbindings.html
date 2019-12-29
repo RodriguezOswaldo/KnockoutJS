@@ -7,16 +7,18 @@
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Text Bindings! - Knockout Js</title>
+    <title>HTML Binding | Knockout JS</title>
 </head>
 <body>
-    <p>Hello, my name is <strong><span data-bind="text:name"></span></strong> and I am <span data-bind="text:job"></span></strong>. My age is <span data-bind="text:age"></span></p>
+    <div data-bind="html: htmlString"></div>
+
     <script>
-        var viewModel ={
-            name: ko.observable('Own'),
-            job: ko.observable('Web Developer'),
-            age: ko.observable(20)
+        var viewModel = {
+            htmlString: ko.observable()
         }
+        viewModel.htmlString("<h1>This is an html heading</h1><strong><p>With one Paragraph!</p></strong>")
+
+
         ko.applyBindings(viewModel);
     </script>
 </body>
