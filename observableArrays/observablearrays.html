@@ -17,37 +17,44 @@
             <thead>
                 <th>Index</th>
                 <th>Name</th>
+                <th>Age</th>
             </thead>
             <tbody data-bind="foreach: users">
                 <tr>
                         <td data-bind="text: $index"></td>
                         <td data-bind="text: name"> </td>
+                      <!--  
+                          <td data-bind="text: age"> </td>
+                      -->
                         <td><a class="btn btn-outline-danger" href="#" data-bind="click: $parent.removeUser"  >Remove</a> </td>
                 </tr>
             </tbody>
         </table>
         <form action="">
             <label for="newUser">Name</label>
-            <input type="text" id="newUser">
-
+           <!-- <input type="text" id="newUser">
+            <label for="userAge">Age</label>
+            <input type="text" id="userAge">
+--->
             <button class="btn btn-outline-info" data-bind="click: addUser">Add User</button>
         </form>
     </div>
     <script>
-    function viewModel(){
-        var self = this;
+        function viewModel(){
+            var self = this;
 
-        self.users = ko.observableArray([
-           
-        ]);
-        self.addUser = function(){
-            self.users.push({name:$('#newUser').val()});
+            self.users = ko.observableArray([
+            
+            ]);
+            self.addUser = function(){
+                self.users.push({name:$('#newUser').val()});
+                // self.users.push({age:$('#userAge').val()});
+            }
+            self.removeUser = function(){
+                self.users.remove(this);
+            }
         }
-        self.removeUser = function(){
-            self.users.remove(this);
-        }
-    }
-    ko.applyBindings(new viewModel());
+        ko.applyBindings(new viewModel());
     </script>
 </body>
 </html>
