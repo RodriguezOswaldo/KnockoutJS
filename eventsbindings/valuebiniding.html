@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Value Binding | Knockout JS</title>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <label> Login: <input data-bind="value: userName, valueUpdate: 'afterkeydown'" type="text"></label>
+            <label> Password: <input data-bind="value: userPassword" type="password"></label>
+            <p>Loggin in As: <span data-bind="text: userName"></span> </p>
+            <p>Your Password is : <span data-bind="text: userPassword"></span> </p>
+        </form>
+    </div>
+    <script>
+        var viewModel={
+            userName: ko.observable(),
+            userPassword: ko.observable()
+
+        }
+        ko.applyBindings(viewModel);
+    </script>
+</body>
+</html>
