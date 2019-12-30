@@ -10,6 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
 </head>
 <body>
+    <div class="container">
     <ul data-bind="template: {name: 'categoryTemplate', foreach: categories, as: 'category'}"></ul>
 
     <script type="text/html" id="categoryTemplate">
@@ -26,6 +27,7 @@
             </a>
         </li>
     </script>
+</div>
 
 <script>
     var viewModel = {
