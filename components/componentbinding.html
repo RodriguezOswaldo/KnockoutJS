@@ -10,29 +10,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
 </head>
 <body>
-    <newsletter-widget>
-
-    </newsletter-widget>
+    <div data-bind='component: "newsletter-widget"'></div>
 
     <script>
-        ko.components.register('newsletter-widget',{
-            viewModel: function(){
+        ko.componenes.register('newsletter-widget', {
+            viewModel: function(params){
                 this.email = ko.observable();
-                this.showMessage = ko.observable(false);
+                this.sendMessage = ko.observable(false);
 
                 this.submitForm = function(){
                     this.showMessage(true);
                 }
             },
             template:
-            `<h3>Subscribe to Our Newsletter</h3>\
-            <form data-bind="submit">\
-                <input data-bind="value: email">\
-                <button type="submit:submitForm">Submit</button>\
-            </form>       
-            <p data-bind="visible: showMessage">Thanks for Subscribing: <br><strong><span data-bind="text: email"</strong></p>` 
+            `
+            <h3>Subscribe to Our Newsletter</h3>\
+                <form data-bind="submit: submitForm">\
+                    <input data-bind=?"value:email">\
+                    <button type="submit"> Submit</button>\
+                </form>\
+                <p data-bind="visible: showMessage"> Thank you for Su`
         });
-        ko.applyBindings();
     </script>
    
 </body>
