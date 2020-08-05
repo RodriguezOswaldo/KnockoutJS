@@ -14,10 +14,11 @@
     <script>
         ko.components.register('newsletter-widget', {
             viewModel: function(params){
-                this.email = ko.observable();
-                this.showMessage = ko.observable(false);
-                this.submitForm = function(){
-                    this.showMessage(true);
+                var m = this;
+                m.email = ko.observable();
+                m.showMessage = ko.observable(false);
+                m.submitForm = function(){
+                    m.showMessage(true);
                 }
             },
             template:
