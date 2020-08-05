@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Template Bindings | Knockout JS</title>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+</head>
+<body>
+    <newsletter-widget>
+
+    </newsletter-widget>
+
+    <script>
+        ko.components.register('newsletter-widget',{
+            viewModel: function(){
+                this.email = ko.observable();
+                this.showMessage = ko.observable(false);
+
+                this.submitForm = function(){
+                    this.showMessage(true);
+                }
+            },
+            template:
+            `<h3>Subscribe to Our Newsletter</h3>\
+            <form data-bind="submit">\
+                <input data-bind="value: email">\
+                <button type="submit:submitForm">Submit</button>\
+            </form>       
+            <p data-bind="visible: showMessage">Thanks for Subscribing: <br><strong><span data-bind="text: email"</strong></p>` 
+        });
+        ko.applyBindings();
+    </script>
+   
+</body>
+</html>
