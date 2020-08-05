@@ -7,12 +7,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
     <script src="underscore-ko.js"></script>
+    <script src="viewModel.js"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 <body>
-    <script>
-        
-    </script>
+<p><strong>Categories</strong></p>
+<ul data-bind="foreach: categories">
+    <li data-bind="text:name"></li>
+</ul>
+<p><strong>Union</strong></p>
+<ul data-bind="foreach: categoriesAlt">
+    <li data-bind="text:name"></li>
+</ul>
+<p>
+    <label for="addCategory">Add Category</label>
+    <input id="addCategory" type="text" data-bind="value:newCategory">
+    <button id="addBtn" data-bind>Add Category</button>
+</p>
+
 </body>
 </html>
