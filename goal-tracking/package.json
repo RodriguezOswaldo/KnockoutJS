@@ -1,0 +1,20 @@
+{
+  "name": "goal-tracking",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "*",
+    "body-parser": "*",
+    "mongojs": "*"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RodriguezOswaldo/KnockoutJS/tree/master/goal-tracking"
+  },
+  "description": ""
+}
