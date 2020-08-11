@@ -52,7 +52,7 @@
                   </div>
                   <div class="col-md-3">
                       <button data-bind="click: addGoal, enable:goalInputName" class="btn btn-primary">Add Goal </button>
-                      <button class="btn btn-danger">Delete</button>
+                      <button data-bind="enable: canEdit" class="btn btn-danger">Delete</button>
                   </div>
                 </div>
                 <br>
@@ -68,7 +68,7 @@
                       </thead>
                       <tbody data-bind="foreach: goals">
                         <tr>
-                          <td><input  type="checkbox"></td>
+                          <td><input data-bind="value:$data, checked:$parent.selectedGoals" type="checkbox"></td>
                           <td data-bind="text: name">Name</td>
                           <td data-bind="text: type">Type</td>
                           <td data-bind="text: deadline">Deadline</td>
