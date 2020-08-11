@@ -10,7 +10,11 @@ function ViewModel(){
     m.goalInputName = ko.observable();
     m.goalInputType = ko.observable();
     m.goalInputDeadline = ko.observable();
+    // m.selectedGoals = ko.observable();
 
+    // m.canEdit = ko.computed(function(){
+    //     return m.selectedGoals().length > 0;
+    // });
     m.addGoal = function(){
         var name = $('#name').val();
         var type = $('#type').val();
