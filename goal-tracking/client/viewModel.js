@@ -15,7 +15,7 @@ function ViewModel(){
         var name = $('#name').val();
         var type = $('#type').val();
         var deadline = $('#deadline').val();
-
+        
         m.goals.push({
             name: name,
             type: type,
@@ -39,8 +39,7 @@ function ViewModel(){
             }
         });
     }
-
-    m.types = ko.observableArray(['like', 'your', 'face']);
+    m.types = ko.observableArray(['Health & Fitness', 'Professional', 'Relationships', 'Self Help']);
 }
 var viewModel = new ViewModel();
 ko.applyBindings(viewModel)
