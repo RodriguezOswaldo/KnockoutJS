@@ -13,7 +13,7 @@
 </head>
 <body onload="getGoals()">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#"><h2>Goal Tracking</h2></a>
+                <a class="navbar-brand" href="#"><h2>Goal Tracking with Knockout JS</h2></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -42,7 +42,7 @@
               <div class="container">
                 <div class="row">
                   <div class="col-md-3">
-                    <input data-bind="value: goalInputName" type="text" class="form-control" placeholder="Enter Goal"  name="" id="name">
+                    <input data-bind="value: goalInputName, valueUpdate: 'keypress'" type="text" class="form-control" placeholder="Enter Goal"  name="" id="name">
                   </div>
                   <div class="col-md-3">
                     <select data-bind="value: goalInputType, options:types, optionsCaption: 'Choose Type'" name="" class="form-control" id="type"></select>
@@ -51,7 +51,7 @@
                       <input data-bind="value: goalInputDeadline" type="date" class="form-control" placeholder="Enter Goal"  name="" id="deadline">
                   </div>
                   <div class="col-md-3">
-                      <button data-bind="click: addGoal" class="btn btn-primary">Add Goal </button>
+                      <button data-bind="click: addGoal, enable:goalInputName" class="btn btn-primary">Add Goal </button>
                       <button class="btn btn-danger">Delete</button>
                   </div>
                 </div>

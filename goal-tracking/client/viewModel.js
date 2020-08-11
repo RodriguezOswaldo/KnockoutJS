@@ -32,7 +32,7 @@ function ViewModel(){
             type: "POST",
             contentType: "application/json",
             success: function(data){
-                console.log("Goals Added...")
+                console.log("Goal Added...")
             },
             error: function(xhr, status, err){
                 console.log(err);
