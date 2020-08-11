@@ -1,6 +1,12 @@
-function viewModel(){
-    var m = this;
-    m.goals = ko.observableArray();
+function getGoals(){
+    $.get('http://localhost:3000/goals', function(data){
+        viewModel.goals(data);
+    });
 }
-var viewModel = new viewModel();
+
+function iewModel(){
+    var m = this;
+    m.goalVs = ko.observableArray(['like', 'your', 'face']);
+}
+var viewModel = new ViewModel();
 ko.applyBinding(viewModel);
