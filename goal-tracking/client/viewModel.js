@@ -7,9 +7,9 @@ function getGoals(){
 function ViewModel(){
     var m = this;
     m.goals = ko.observableArray();
-    m.goalsInputName = ko.observable();
-    m.goalsInputType = ko.observable();
-    m.goalsInputDeadline = ko.observable();
+    m.goalInputName = ko.observable();
+    m.goalInputType = ko.observable();
+    m.goalInputDeadline = ko.observable();
 
     m.addGoal = function(){
         var name = $('#name').val();
@@ -43,4 +43,4 @@ function ViewModel(){
     m.types = ko.observableArray(['like', 'your', 'face']);
 }
 var viewModel = new ViewModel();
-ko.applyBinding(viewModel);
+ko.applyBindings(viewModel)
