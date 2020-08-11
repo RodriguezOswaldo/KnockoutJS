@@ -23,18 +23,18 @@ app.get('/goals', function(req, res){
 });
 
 app.post('/goals', function(req, res){
-    db.goals.insert(req.body, function(err,doc){
+    db.goals.find(function(err,docs){
         if(err){
             res.send(err);
         }else{
             console.log('Getting Goals...');
-            res.json(doc);
+            res.json(docs);
         }
     });
 });
 
 app.put('/goals/:id', function(req, res){
-    db.goals.findAndModify({query:{_id: mongojs.ObjectId(req.param.id)},
+    db.goals.findAndModify({query:{_id: mongojs.ObjectId(req.params.id)},
         update:{  $set:{
             name: req.body.name,
             type: req.body.type,
@@ -50,5 +50,56 @@ app.put('/goals/:id', function(req, res){
         }
     });
 });
+
+app.delete('/goals/:id', function(req, res){
+    db.goals.remove({_id: mongojs.ObjectId(req.params.id)}), function(err, doc){
+        if(err){
+            res.send(err);
+        }else{
+            console.log('Removing Goals..');
+            res.json(doc);
+        }
+    }
+});
 app.listen(3000);
 console.log('Running on port 3000');
+
+// app.get('/goals', function(req, res){
+//     db.goals.find(function(err,docs){
+//         if(err){
+//             res.send(err);
+//         }else{
+//             console.log('Getting Goals...');
+//             res.json(docs);
+//         }
+//     });
+// });
+
+// app.post('/goals', function(req, res){
+//     db.goals.insert(req.body, function(err,doc){
+//         if(err){
+//             res.send(err);
+//         }else{
+//             console.log('Getting Goals...');
+//             res.json(doc);
+//         }
+//     });
+// });
+
+// app.put('/goals/:id', function(req, res){
+//     db.goals.findAndModify({query:{_id: mongojs.ObjectId(req.param.id)},
+//         update:{  $set:{
+//             name: req.body.name,
+//             type: req.body.type,
+//             deadline: req.body.deadline
+//     }},
+//         new: true
+//     }, function(err,doc){
+//         if(err){
+//             res.send(err);
+//         }else{
+//             console.log('Updating Goals...');
+//             res.json(doc);
+//         }
+//     });
+// });
