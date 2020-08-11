@@ -38,19 +38,24 @@
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                       </form>
               </nav>
+
+              <!-- Work From here! -->
+              <!-- Work From here! -->
+              <!-- Work From here! -->
+
               <div class="container">
                 <div class="row">
                   <div class="col-md-3">
-                    <input type="text" class="form-control" placeholder="Enter Goal"  name="" id="name">
+                    <input data-bind="value: goalInputName" type="text" class="form-control" placeholder="Enter Goal"  name="" id="name">
                   </div>
                   <div class="col-md-3">
-                    <select name="" class="form-control" id="type"></select>
+                    <select data-bind="value: goalInputType" name="" class="form-control" id="type"></select>
                   </div>
                   <div class="col-md-3">
-                      <input type="date" class="form-control" placeholder="Enter Goal"  name="" id="deadline">
+                      <input data-bind="value: goalInputDeadline" type="date" class="form-control" placeholder="Enter Goal"  name="" id="deadline">
                   </div>
                   <div class="col-md-3">
-                      <button class="btn btn-primary">Add Goal </button>
+                      <button data-bind="click: addGoals" class="btn btn-primary">Add Goal </button>
                       <button class="btn btn-danger">Delete</button>
                   </div>
                 </div>
