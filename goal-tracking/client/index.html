@@ -53,8 +53,8 @@
                   <div class="col-md-3">
                       <button data-bind="click: addGoal, enable:goalInputName, visible:!isUpdate()" class="btn btn-primary">Add Goal </button>
                       <button data-bind="click: updateGoal, enable:goalInputName, visible:isUpdate" class="btn btn-primary">Update</button>
-                      <button data-bind="click: editSelected, enable:canEdit" class="btn btn-primary">Edit </button>
-                      <button data-bind="enable:canEdit" class="btn btn-danger">Delete</button>
+                      <button data-bind="click: editSelected, enable: canEdit" class="btn btn-primary">Edit </button>
+                      <button data-bind="click: deleteSelected, enable: canEdit" class="btn btn-danger">Delete</button>
                   </div>
                 </div>
                 <br>

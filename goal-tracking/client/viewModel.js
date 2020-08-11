@@ -28,22 +28,22 @@ function ViewModel() {
             deadline: deadline
         });
 
-        $.ajax({
-            url: "http://localhost:3000/goals",
-            data: JSON.stringify({
-                "name": name,
-                "type": type,
-                "deadline": deadline
-            }),
-            type: "POST",
-            contentType: "application/json",
-            success: function (data) {
-                console.log("Goal Added...")
-            },
-            error: function (xhr, status, err) {
-                console.log(err);
-            }
-        });
+        // $.ajax({
+        //     url: "http://localhost:3000/goals",
+        //     data: JSON.stringify({
+        //         "name": name,
+        //         "type": type,
+        //         "deadline": deadline
+        //     }),
+        //     type: "POST",
+        //     contentType: "application/json",
+        //     success: function (data) {
+        //         console.log("Goal Added...")
+        //     },
+        //     error: function (xhr, status, err) {
+        //         console.log(err);
+        //     }
+        // });
     }
  ///////////Delete Goal
     m.deleteSelected = function (){
@@ -51,18 +51,18 @@ function ViewModel() {
         $.each(m.selectedGoals(), function (index, value) {
             var id = m.selectedGoals()[index]._id;
             //delete on the db
-            $.ajax({
-                url: "http://localhost:3000/goals" + id,
-                type: "DELETE",
-                async: true,
-                timeout: 300000,
-                success: function (data) {
-                    console.log("Goal Removed...")
-                },
-                error: function (xhr, status, err) {
-                    console.log(err);
-                }
-            });
+            // $.ajax({
+            //     url: "http://localhost:3000/goals" + id,
+            //     type: "DELETE",
+            //     async: true,
+            //     timeout: 300000,
+            //     success: function (data) {
+            //         console.log("Goal Removed...")
+            //     },
+            //     error: function (xhr, status, err) {
+            //         console.log(err);
+            //     }
+            // });
         });
         m.goals.removeAll(m.selectedGoals());
         m.selectedGoals.removeAll();
@@ -84,22 +84,22 @@ function ViewModel() {
             deadline: deadline
         });
 
-        $.ajax({
-            url: "http://localhost:3000/goals"+id,
-            data: JSON.stringify({
-                "name": name,
-                "type": type,
-                "deadline": deadline
-            }),
-            type: "PUT",
-            contentType: "application/json",
-            success: function (data) {
-                console.log("Goal Updated...")
-            },
-            error: function (xhr, status, err) {
-                console.log(err);
-            }
-        });
+        // $.ajax({
+        //     url: "http://localhost:3000/goals"+id,
+        //     data: JSON.stringify({
+        //         "name": name,
+        //         "type": type,
+        //         "deadline": deadline
+        //     }),
+        //     type: "PUT",
+        //     contentType: "application/json",
+        //     success: function (data) {
+        //         console.log("Goal Updated...")
+        //     },
+        //     error: function (xhr, status, err) {
+        //         console.log(err);
+        //     }
+        // });
     }
  ////////////Edit Goal
     m.editSelected = function () {
