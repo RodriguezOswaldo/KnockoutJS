@@ -11,7 +11,7 @@
   
     <title>Goal Tracking App!</title>
 </head>
-<body>
+<body onload="getGoals()">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#">Navbar</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,8 +39,45 @@
                       </form>
               </nav>
               <div class="container">
-    <h2>Goal Tracking</h2>
-    <!-- <script src="viewModel.js">  </script> -->
-</div>
+                <div class="row">
+                  <div class="col-md-3">
+                    <input type="text" class="form-control" placeholder="Enter Goal"  name="" id="name">
+                  </div>
+                  <div class="col-md-3">
+                    <select name="" class="form-control" id="type"></select>
+                  </div>
+                  <div class="col-md-3">
+                      <input type="date" class="form-control" placeholder="Enter Goal"  name="" id="deadline">
+                  </div>
+                  <div class="col-md-3">
+                      <button class="btn btn-primary">Add Goal </button>
+                      <button class="btn btn-danger">Delete</button>
+                  </div>
+                </div>
+                <br>
+                  <h2>Goal Tracking</h2>
+                  <div class="row">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Deadline</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>Name</td>
+                          <td>Type</td>
+                          <td>Deadline</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                
+                  <script src="viewModel.js">  </script>
+              </div>
 </body>
 </html>
