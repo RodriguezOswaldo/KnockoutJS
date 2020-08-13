@@ -22,6 +22,7 @@ app.get('/goals', function(req, res){
     });
 });
 
+//Test
 app.post('/goals', function(req, res){
     db.goals.find(function(err,docs){
         if(err){
